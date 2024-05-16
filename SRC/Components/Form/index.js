@@ -13,6 +13,21 @@ export default function Form(){
         return setImc(weight/(height*height).toFixed(2))
     }
 
+    function validationImc(){
+        if (weight != null && height != null){
+            imcCalculator()
+            setHeight(null)
+            setWeight(null)
+            setMessageImc("SEU IMC = ")
+            setTextButton("CALCULAR NOVAMENTE")
+            return
+        }
+
+        setImc(null)
+        setTextButton("calcular")
+        setMessageImc("Preencha peso e altura")
+    }
+
 
 
     return(
